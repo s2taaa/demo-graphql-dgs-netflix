@@ -4,7 +4,7 @@ type Book {
     page: Int
     author: Author
 }
-input BookInput {
+input BookDTO {
     name: String
     page: Int
     authorId: String
@@ -14,7 +14,7 @@ type Query {
     findAllBook: [Book]
 }
 type Mutation{
-    newBook(book:BookInput!):Book
+    newBook(book:BookDTO!):Book
     deleteBook(id:String!): Boolean
     updateBook(id:String!,name:String!,page:Int):Book
 }
