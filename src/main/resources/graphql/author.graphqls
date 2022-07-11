@@ -1,0 +1,19 @@
+type Author {
+    id: String
+    firstName: String
+    lastName: String
+}
+input AuthorInput {
+    firstName: String
+    lastName: String
+}
+extend type Query {
+    findAuthorById(id:String!):Author
+    findAllAuthor: [Author]
+
+}
+extend type Mutation {
+    createAuthor(author:AuthorInput!):Author
+    deleteAuthor(id:String!):Boolean
+    updateAuthor(id:String!,firstName:String!,lastName:String!):Author
+}
